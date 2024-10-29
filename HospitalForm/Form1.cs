@@ -30,7 +30,6 @@ namespace HospitalForm
                 case 1:
                     Visibilidad(true, true, false, false, false);
                     dataListaPersonas.DataSource = personas.OfType<Paciente>().ToList();
-                    ConfigurarDataGridView();
                     break;
                 case 2:
                     Visibilidad(true, false, false , false, false); 
