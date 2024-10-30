@@ -13,6 +13,7 @@ namespace HospitalForm
     public partial class Form1 : Form
     {
         public List<Persona> personas = new List<Persona>();
+        private FormPaciente formPaciente;
 
         public Form1()
         {
@@ -72,7 +73,11 @@ namespace HospitalForm
             switch (comboBox1.SelectedIndex)
             {
                 case 1:
-                    personas.Add(new Paciente());
+                    formPaciente = new FormPaciente(personas.OfType<Medico>().ToList());
+
+                    if (formPaciente.ShowDialog() == DialogResult.OK)
+                        personas.Add(formPaciente.Paciente);
+
                     dataListaPersonas.DataSource = null;
                     dataListaPersonas.DataSource = personas.OfType<Paciente>().ToList();
                     break;
