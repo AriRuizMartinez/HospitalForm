@@ -40,6 +40,10 @@ namespace HospitalForm
                     Visibilidad(true, false, false , false, false); 
                     dataListaPersonas.DataSource = personas.OfType<PersonalAdministrativo>().ToList();
                     break;
+                case 4:
+                    Visibilidad(false, false, false, false, false);
+                    dataListaPersonas.DataSource = personas.OfType<PersonalHospital>().ToList();
+                    break;
             }
         }
 

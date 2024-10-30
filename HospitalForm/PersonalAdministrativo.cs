@@ -24,7 +24,10 @@ namespace HospitalForm
     public class PersonalAdministrativo : PersonalHospital
     {
         public eDepartamento Departamento { get; set; }
-        public PersonalAdministrativo() { }
+        public PersonalAdministrativo() 
+        {
+            Departamento = eDepartamento.Recepcion;
+        }
         public PersonalAdministrativo(string nombre, int edad, int sueldo, eDepartamento departamento) : base(nombre, edad, sueldo)
         {
             Departamento = departamento;
