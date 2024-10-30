@@ -77,6 +77,12 @@ namespace HospitalForm
             switch (comboBox1.SelectedIndex)
             {
                 case 1:
+                    if(personas.OfType<Medico>().Count() == 0)
+                    {
+                        MessageBox.Show("Necesitas tener como minimo un medico para crear un paciente.");
+                        return;
+                    }
+
                     formPaciente = new FormPaciente(personas.OfType<Medico>().ToList());
 
                     if (formPaciente.ShowDialog() == DialogResult.OK)

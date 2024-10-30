@@ -30,7 +30,8 @@ namespace HospitalForm
         {
             Enfermedad = enfermedad;
             Medico = medico;
-            medico.AñadirPaciente(this);
+            if(medico != null)
+                medico.AñadirPaciente(this);
         }
 
         public override string ToString()
